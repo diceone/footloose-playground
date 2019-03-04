@@ -1,0 +1,10 @@
+cluster:
+  name: cluster
+  privateKey: cluster-key
+machines:
+- count: 1
+  spec:
+    image: diceone/centos7:0.1.1
+    name: node%d.fuckup.dev
+    portMappings:
+    - containerPort: 22
