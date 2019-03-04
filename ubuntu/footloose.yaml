@@ -1,0 +1,10 @@
+cluster:
+  name: cluster
+  privateKey: cluster-key
+machines:
+- count: 1
+  spec:
+    image: diceone/ubuntu18.04:latest
+    name: node%d.fuckup.dev
+    portMappings:
+    - containerPort: 22
