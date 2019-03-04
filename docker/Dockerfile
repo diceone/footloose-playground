@@ -1,7 +1,7 @@
 FROM quay.io/footloose/centos7
 
-LABEL com.nexinto.owner="www.dev-ops.de" \
-      com.nexinto.version="0.1.1"
+LABEL com.owner="www.dev-ops.de" \
+      com.version="0.1.1"
 
 RUN yum update -y && yum install -y epel-release && yum install -y vim htop lsof rsync screen telnet ncdu nmap && yum clean all
 RUN mkdir -p /www/bin
