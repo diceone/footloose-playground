@@ -1,4 +1,4 @@
-FROM quay.io/footloose/ubuntu18.04
+FROM quay.io/footloose/debian10
 
 LABEL com.owner="www.dev-ops.de" \
       com.version="0.1.3"
