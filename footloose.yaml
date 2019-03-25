@@ -4,7 +4,7 @@ cluster:
 machines:
 - count: 1
   spec:
-    image: diceone/centos7:0.1.3
+    image: diceone/centos7:0.1.4
     name: node%d.fuckup.dev
     portMappings:
     - containerPort: 22
