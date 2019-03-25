@@ -1,7 +1,7 @@
 FROM quay.io/footloose/debian10
 
 LABEL com.owner="www.dev-ops.de" \
-      com.version="0.1.3"
+      com.version="0.1.4"
 
 RUN mkdir -p /www/bin
 COPY config/bashrc /root/.bashrc
