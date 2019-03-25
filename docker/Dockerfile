@@ -8,3 +8,5 @@ RUN mkdir -p /www/bin
 COPY config/bashrc /root/.bashrc
 RUN rm -f /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+
+EXPOSE 80 443
