@@ -1,2 +1,2 @@
 [all]
-node0 ansible_connection=docker
+cluster-node0.fuckup.dev ansible_connection=docker

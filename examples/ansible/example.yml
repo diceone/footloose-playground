@@ -1,6 +1,6 @@
 ---
 - name: Install nginx
-  hosts: node0
+  hosts: cluster-node0.fuckup.dev
 
   tasks:
   - name: Add epel-release repo
