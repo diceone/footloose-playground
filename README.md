@@ -7,6 +7,8 @@ This repo uses centos7 modified image for development.
 
 Just download the repo. Then:
 
+cd os-examples/centos7/
+
 footloose create
 
 footloose ssh root@node0.fuckup.dev
