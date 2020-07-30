@@ -1,0 +1,11 @@
+[Unit]
+Description=code-server
+
+[Service]
+Type=simple
+Environment=PASSWORD=test123
+ExecStart=/usr/bin/code-server --host 0.0.0.0 --user-data-dir /var/lib/code-server --auth password
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

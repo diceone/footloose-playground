@@ -13,7 +13,9 @@ RUN wget https://get.helm.sh/helm-v3.3.0-rc.2-linux-amd64.tar.gz && tar -zxvf he
 RUN yum install -y https://github.com/cdr/code-server/releases/download/3.4.1/code-server-3.4.1-amd64.rpm
 RUN mkdir -p /www/bin
 COPY config/bashrc /root/.bashrc
+COPY config/code-server.service /lib/systemd/system/code-server.service
+RUN systemctl enable code-server
 RUN rm -f /etc/localtime
 RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
-EXPOSE 80 443
+EXPOSE 8080 443

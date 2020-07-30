@@ -4,7 +4,7 @@ cluster:
 machines:
 - count: 1
   spec:
-    image: diceone/centos7:0.1.6_kube
+    image: diceone/centos7:0.1.7_kube
     name: kube%d.vogeler.dev
     portMappings:
     - containerPort: 22
