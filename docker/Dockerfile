@@ -10,7 +10,7 @@ RUN wget https://storage.googleapis.com/kubernetes-helm/helm-v2.12.2-linux-amd64
 RUN tar -zxvf helm-v2.12.2-linux-amd64.tar.gz
 RUN mv linux-amd64/helm /usr/local/bin/helm2 && mv linux-amd64/tiller /usr/local/bin/tiller
 RUN wget https://get.helm.sh/helm-v3.3.0-rc.2-linux-amd64.tar.gz && tar -zxvf helm-v3.3.0-rc.2-linux-amd64.tar.gz  && mv linux-amd64/helm /usr/local/bin/helm
-
+RUN yum install -y https://github.com/cdr/code-server/releases/download/3.4.1/code-server-3.4.1-amd64.rpm
 RUN mkdir -p /www/bin
 COPY config/bashrc /root/.bashrc
 RUN rm -f /etc/localtime
