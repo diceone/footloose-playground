@@ -1,0 +1,10 @@
+cluster:
+  name: cluster
+  privateKey: kube-key
+machines:
+- count: 1
+  spec:
+    image: diceone/centos7:0.1.5
+    name: kube%d.vogeler.dev
+    portMappings:
+    - containerPort: 22
