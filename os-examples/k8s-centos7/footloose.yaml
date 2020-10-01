@@ -4,9 +4,13 @@ cluster:
 machines:
 - count: 1
   spec:
-    image: diceone/centos7:0.1.7_kube
+    image: diceone/centos7:0.1.8_kube
     name: kube%d.vogeler.dev
     portMappings:
     - containerPort: 22
     - containerPort: 8080
       hostPort: 8080
+    privileged: true
+    volumes:
+    - type: volume
+      destination: /var/lib/docker
