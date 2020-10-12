@@ -1,7 +1,7 @@
-FROM diceone/centos7:0.1.7_docker
+FROM diceone/centos7:0.1.8_docker
 
 LABEL com.owner="www.dev-ops.de" \
-      com.version="0.1.7"
+      com.version="0.1.8"
 
 RUN mkdir -p /etc/docker/compose/myservice/ 
 RUN mkdir -p /data/service/ 

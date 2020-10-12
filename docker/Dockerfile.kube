@@ -1,20 +1,15 @@
-FROM quay.io/footloose/centos7
+FROM diceone/centos7:0.1.8
 
 LABEL com.owner="www.dev-ops.de" \
       com.version="0.1.8"
 
 RUN curl -sLS https://dl.get-arkade.dev | sh
-RUN yum update -y && yum install -y epel-release && yum install -y vim netstat htop lsof rsync screen telnet ncdu nmap wget httpd-tools && yum clean all
 RUN wget https://storage.googleapis.com/kubernetes-helm/helm-v2.12.2-linux-amd64.tar.gz
 RUN tar -zxvf helm-v2.12.2-linux-amd64.tar.gz
 RUN mv linux-amd64/helm /usr/local/bin/helm2 && mv linux-amd64/tiller /usr/local/bin/tiller
 RUN yum install -y https://github.com/cdr/code-server/releases/download/v3.5.0/code-server-3.5.0-amd64.rpm
-RUN mkdir -p /www/bin
-COPY config/bashrc /root/.bashrc
 COPY config/code-server.service /lib/systemd/system/code-server.service
 RUN systemctl enable code-server
-RUN rm -f /etc/localtime
-RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 RUN yum install -y docker iptables && systemctl enable docker
 
 EXPOSE 8080 443

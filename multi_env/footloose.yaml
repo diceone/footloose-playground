@@ -4,13 +4,13 @@ cluster:
 machines:
 - count: 1
   spec:
-    image: diceone/centos7:0.1.4
+    image: diceone/centos7:0.1.8
     name: node%d.vogeler.dev
     portMappings:
     - containerPort: 22
 - count: 1
   spec:
-    image: diceone/centos7:0.1.7_jenkins
+    image: diceone/centos7:0.1.8_jenkins
     name: jenkins%d.vogeler.dev
     portMappings:
     - containerPort: 22

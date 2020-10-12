@@ -1,13 +1,8 @@
-FROM quay.io/footloose/centos7
+FROM diceone/centos7:0.1.8
 
 LABEL com.owner="www.dev-ops.de" \
-      com.version="0.1.7"
+      com.version="0.1.8"
 
-RUN yum update -y && yum install -y epel-release && yum install -y vim netstat htop lsof rsync screen telnet ncdu nmap wget httpd-tools && yum clean all
-RUN mkdir -p /www/bin
-COPY config/bashrc /root/.bashrc
-RUN rm -f /etc/localtime
-RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 RUN yum install -y docker iptables && systemctl enable docker
 RUN curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
