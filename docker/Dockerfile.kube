@@ -1,7 +1,7 @@
 FROM quay.io/footloose/centos7
 
 LABEL com.owner="www.dev-ops.de" \
-      com.version="0.1.6"
+      com.version="0.1.8"
 
 RUN curl -sLS https://dl.get-arkade.dev | sh
 RUN yum update -y && yum install -y epel-release && yum install -y vim netstat htop lsof rsync screen telnet ncdu nmap wget httpd-tools && yum clean all
