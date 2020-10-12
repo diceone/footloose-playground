@@ -1,1 +1,3 @@
 cluster*
+*.pub
+*key*

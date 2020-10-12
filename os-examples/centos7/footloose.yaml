@@ -8,3 +8,9 @@ machines:
     name: node%d.fuckup.dev
     portMappings:
     - containerPort: 22
+- count: 1
+  spec:
+    image: diceone/centos7:0.1.8_kube
+    name: code.fuckup.dev
+    portMappings:
+    - containerPort: 22
