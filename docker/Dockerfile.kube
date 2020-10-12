@@ -11,6 +11,12 @@ RUN yum install -y https://github.com/cdr/code-server/releases/download/v3.5.0/c
 COPY config/code-server.service /lib/systemd/system/code-server.service
 RUN systemctl enable code-server
 RUN yum install -y docker iptables && systemctl enable docker
+##### install terraform switcher
 RUN curl -L https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh | sh
+##### install puppet bolt
+RUN rpm -Uvh https://yum.puppet.com/puppet-tools-release-el-7.noarch.rpm
+RUN yum install -y puppet-bolt
+##### install ansible
+RUN yum install -y ansible
 
 EXPOSE 8080 443
