@@ -14,7 +14,7 @@ machines:
     name: jenkins%d.vogeler.dev
     portMappings:
     - containerPort: 22
-    - containerPort: 8080
+    - containerPort: 8081
       hostPort: 8081
     privileged: true
     volumes:
