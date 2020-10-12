@@ -10,6 +10,18 @@ machines:
     - containerPort: 22
 - count: 1
   spec:
+    image: diceone/centos7:0.1.7_jenkins
+    name: jenkins%d.vogeler.dev
+    portMappings:
+    - containerPort: 22
+    - containerPort: 8080
+      hostPort: 8081
+    privileged: true
+    volumes:
+    - type: volume
+      destination: /var/lib/docker
+- count: 1
+  spec:
     image: diceone/centos7:0.1.8_kube
     name: code%d.vogeler.dev
     portMappings:

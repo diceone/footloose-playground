@@ -1,0 +1,12 @@
+FROM diceone/centos7:0.1.7_docker
+
+LABEL com.owner="www.dev-ops.de" \
+      com.version="0.1.7"
+
+RUN mkdir -p /etc/docker/compose/myservice/ 
+RUN mkdir -p /data/service/ 
+RUN chmod 777 /data/service
+COPY services/jenkins/docker-compose.yml /etc/docker/compose/myservice/docker-compose.yml
+RUN systemctl enable docker-compose@myservice
+
+EXPOSE 8080 50000
