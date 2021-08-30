@@ -1,0 +1,16 @@
+cluster:
+  name: cluster
+  privateKey: capi-key
+machines:
+- count: 1
+  spec:
+    image: diceone/centos7:0.1.9_capi
+    name: capi%d.vogeler.dev
+    portMappings:
+    - containerPort: 22
+    - containerPort: 8080
+      hostPort: 8080
+    privileged: true
+    volumes:
+    - type: volume
+      destination: /var/lib/docker
