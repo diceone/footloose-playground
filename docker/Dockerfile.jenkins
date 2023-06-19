@@ -1,4 +1,4 @@
-FROM diceone/centos7:0.1.8_docker
+FROM diceone/centos7:0.1.8
 
 LABEL com.owner="www.dev-ops.de" \
       com.version="0.1.8"
